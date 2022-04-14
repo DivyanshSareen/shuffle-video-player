@@ -1,0 +1,53 @@
+@import url("https://peaceui.netlify.app/peace.css");
+   
+:root{
+    --primary: #1F1D2B;
+    --primary-100: #2F3142;
+
+    --white: #fff;
+}
+
+body{
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+.nav-wrapper{
+    background-color: var(--primary);
+}
+
+.btn{
+    background-color: var(--primary-100);
+    margin: 0;
+}
+
+.category-title{
+    margin: 0.5em 0em 0.7em 0em;
+}
+
+.category{
+    margin: 2em
+}
+
+.category-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em
+}
+
+.card{
+    background-color: var(--primary-100);
+    color: var(--white);
+}
+
+.card-head>.card-title{
+    font-size: 1.3rem;
+}
+
+.card-subtitle{
+    opacity: 50%;
+}
+
+.card-option{
+    height: 0;
+}

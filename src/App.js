@@ -1,7 +1,12 @@
+import Nav from "./routes/Navigation/Nav";
+import HomePage from "./routes/Home/HomePage";
+import "./styles/style.css";
+
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>hello</header>
+      <Nav />
+      <HomePage />
     </div>
   );
 }
