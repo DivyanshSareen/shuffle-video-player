@@ -14,6 +14,7 @@ body{
 
 .nav-wrapper{
     background-color: var(--primary);
+    width: 100%;
 }
 
 .btn{
@@ -31,7 +32,7 @@ body{
 
 .category-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2em;
 }
 
@@ -71,9 +72,17 @@ body{
     align-items: baseline;
 }
 
-.watch-later{
+.card-actions{
     margin-left: auto;
     margin-right: 0.5em;
     display: flex;
     gap: 1em;
+    opacity: 50%;
+}
+
+.listing-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2em
 }

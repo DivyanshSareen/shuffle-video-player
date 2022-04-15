@@ -5,11 +5,11 @@ const VideoListing = () => {
   const { videos } = useVideo();
   console.log(videos);
   return (
-    <>
+    <div className='listing-grid'>
       {videos.map((vid) => (
         <VideoCard video={vid} />
       ))}
-    </>
+    </div>
   );
 };
 

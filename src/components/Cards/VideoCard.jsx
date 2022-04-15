@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const VideoCard = ({ video }) => {
   const [mouseOnCard, setMouseOnCard] = useState(false);
-  console.log(video);
   return (
     <div
       className='card'
@@ -10,19 +9,19 @@ const VideoCard = ({ video }) => {
       onMouseLeave={() => setMouseOnCard(false)}>
       <div className='card-img resp-img'>
         <img
-          src={require("../../assets/categories/english.webp")}
+          src={require(`../../assets/${video.image}`)}
           alt='thumbnail'
           style={{
             opacity: mouseOnCard === true ? "50%" : "100%",
           }}></img>
-        {mouseOnCard && <i className='fa-solid fa-eye hover-icon'></i>}
+        {mouseOnCard && <i class='fa-solid fa-play hover-icon'></i>}
       </div>
       <div className='card-content'>
         <div className='card-head'>
-          <div className='card-title h4'>{}</div>
-          <div className='card-subtitle sub-title2'>various artists</div>
+          <div className='card-title h4'>{video.title}</div>
+          <div className='card-subtitle sub-title2'>{video.creator}</div>
         </div>
-        <div className='watch-later'>
+        <div className='card-actions'>
           <i class='fa-regular fa-clock fa-lg'></i>
           <i class='fa-solid fa-thumbs-up fa-lg'></i>
         </div>
