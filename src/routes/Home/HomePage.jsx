@@ -1,4 +1,4 @@
-import CategoryCard from "../../components/Cards/CategoryCard";
+import CategoryGrid from "../../components/Grids/CategoryGrid";
 
 const HomePage = () => {
   return (
@@ -6,9 +6,7 @@ const HomePage = () => {
       <div>
         <h1 className='h3 category-title'>Watch music videos</h1>
         <div className='category-grid'>
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
+          <CategoryGrid />
         </div>
       </div>
     </div>

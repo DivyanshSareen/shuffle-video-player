@@ -1,14 +1,14 @@
 const Nav = () => {
   return (
     <nav>
-      <div class='nav-wrapper'>
-        <div class='nav-logo'>
-          <i class='fa-solid fa-shuffle'></i> Shuffle
+      <div className='nav-wrapper'>
+        <div className='nav-logo'>
+          <i className='fa-solid fa-shuffle'></i> Shuffle
         </div>
-        <div class='nav-list'>
-          <div class='nav-item'>Home</div>
-          <div class='nav-item'>Explore</div>
-          <div class='nav-item btn'>Login</div>
+        <div className='nav-list'>
+          <div className='nav-item'>Home</div>
+          <div className='nav-item'>Explore</div>
+          <div className='nav-item btn'>Login</div>
         </div>
       </div>
     </nav>
