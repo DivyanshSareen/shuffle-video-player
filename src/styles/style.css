@@ -77,9 +77,13 @@ body{
     margin-right: 0.5em;
     display: flex;
     gap: 1em;
+}
+.action-icon{
     opacity: 50%;
 }
-
+.action-icon:hover {
+    opacity: 100%;
+}
 .listing-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);

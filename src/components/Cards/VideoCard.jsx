@@ -22,8 +22,8 @@ const VideoCard = ({ video }) => {
           <div className='card-subtitle sub-title2'>{video.creator}</div>
         </div>
         <div className='card-actions'>
-          <i class='fa-regular fa-clock fa-lg'></i>
-          <i class='fa-solid fa-thumbs-up fa-lg'></i>
+          <i class='action-icon fa-regular fa-clock fa-lg'></i>
+          <i class='action-icon fa-solid fa-thumbs-up fa-lg'></i>
         </div>
       </div>
     </div>
