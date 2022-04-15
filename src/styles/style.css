@@ -32,12 +32,25 @@ body{
 .category-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em
+    gap: 2em;
 }
 
 .card{
     background-color: var(--primary-100);
     color: var(--white);
+    cursor: pointer;
+}
+
+.card-img{
+    position: relative;
+}
+
+.hover-icon{
+    position: absolute;
+    font-size: 3em;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
 }
 
 .card-head>.card-title{
