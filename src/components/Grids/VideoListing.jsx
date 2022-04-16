@@ -7,7 +7,7 @@ const VideoListing = () => {
   return (
     <div className='listing-grid'>
       {videos.map((vid) => (
-        <VideoCard video={vid} />
+        <VideoCard key={vid._id} video={vid} />
       ))}
     </div>
   );
