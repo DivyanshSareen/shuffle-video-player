@@ -4,6 +4,7 @@ import HomePage from "./routes/Home/HomePage";
 import Mockman from "mockman-js";
 
 import "./styles/style.css";
+import VideoListing from "./components/Grids/VideoListing";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/listing' element={<VideoListing />} />
         <Route path='mock' element={<Mockman />} />
       </Routes>
     </div>
