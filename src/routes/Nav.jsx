@@ -20,6 +20,9 @@ const Nav = () => {
               Explore
             </div>
           </Link>
+          <Link to='/playlist'>
+            <div className='nav-item'>Playlist</div>
+          </Link>
           <Link to='/login'>
             <div className='nav-item btn'>Login</div>
           </Link>
