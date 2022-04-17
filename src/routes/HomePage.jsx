@@ -1,4 +1,4 @@
-import CategoryGrid from "../../components/Grids/CategoryGrid";
+import CategoryGrid from "../components/Grids/CategoryGrid";
 
 const HomePage = () => {
   return (

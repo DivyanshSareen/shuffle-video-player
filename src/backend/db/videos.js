@@ -9,6 +9,7 @@ export const videos = [
     _id: uuid(),
     title: "Fireflies (Official Music Video)",
     image: "videos/fireflies.webp",
+    category: "English",
     creator: "Owl City",
     likes: 200,
     description: `REMASTERED IN HD!!
@@ -21,6 +22,7 @@ YouTube view counts pre-VEVO: 22,880,713. (C) 2009 Universal Republic Records, a
   {
     _id: uuid(),
     title: "Bones (Official Lyric Video)",
+    category: "English",
     creator: "Imagine Dragons",
     image: "videos/bones.webp",
     likes: 200,
@@ -37,6 +39,7 @@ Music video by Imagine Dragons performing Bones (Lyric Video). © 2022 KIDinaKOR
     _id: uuid(),
     title: "Happy (Video)",
     image: "videos/happy.webp",
+    category: "English",
     creator: "Pharrell Williams",
     likes: 200,
     description: `Happy from Despicable Me 2 - Pharrell Williams (2013) - Universal Pictures Film Music
@@ -47,6 +50,7 @@ Music video by Imagine Dragons performing Bones (Lyric Video). © 2022 KIDinaKOR
   {
     _id: uuid(),
     title: "VIBE (Official Video)",
+    category: "Punjabi",
     creator: "Diljit Dosanjh",
     image: "videos/vibe.webp",
     likes: 200,
@@ -63,6 +67,7 @@ Spl Thx - Diljit Thind ( THIND MOTION FILMS ) Chani Nattan, Maan Farms
   {
     _id: uuid(),
     title: "BOY",
+    category: "Japanese",
     creator: "King Gnu",
     image: "videos/boy.webp",
     likes: 200,
@@ -72,6 +77,7 @@ Spl Thx - Diljit Thind ( THIND MOTION FILMS ) Chani Nattan, Maan Farms
   {
     _id: uuid(),
     title: "Fly high!! (spring Version)",
+    category: "Japanese",
     creator: "Burnout Syndromez",
     image: "videos/fly-high.webp",
     likes: 200,

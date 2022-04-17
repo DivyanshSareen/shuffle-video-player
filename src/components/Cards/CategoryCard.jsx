@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useVideo } from "../../context/video-context";
 
 const CategoryCard = ({ category }) => {
+  const { getVideosByCategory } = useVideo();
   const [mouseOnCard, setMouseOnCard] = useState(false);
   return (
     <Link to='/listing'>
       <div
         className='card'
+        onClick={() => {
+          getVideosByCategory(category.categoryName);
+        }}
         onMouseEnter={() => setMouseOnCard(true)}
         onMouseLeave={() => setMouseOnCard(false)}>
         <div className='card-img resp-img'>

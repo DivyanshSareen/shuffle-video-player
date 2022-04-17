@@ -1,0 +1,32 @@
+.card-content {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+.card-actions {
+    margin-left: auto;
+    margin-right: 0.5em;
+    display: flex;
+    gap: 1em;
+}
+
+.action-icon {
+    opacity: 50%;
+}
+
+.action-icon:hover {
+    opacity: 100%;
+}
+
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2em
+}
+
+.list-title{
+    margin-top: 0.7em;
+    margin-left: 2em;
+}
