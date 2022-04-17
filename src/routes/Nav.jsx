@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useVideo } from "../context/video-context";
 
 const Nav = () => {
+  const { getVideos } = useVideo();
   return (
     <nav>
       <div className='nav-wrapper'>
@@ -14,7 +16,9 @@ const Nav = () => {
             <div className='nav-item'>Home</div>
           </Link>
           <Link to='/listing'>
-            <div className='nav-item'>Explore</div>
+            <div className='nav-item' onClick={() => getVideos()}>
+              Explore
+            </div>
           </Link>
           <Link to='/login'>
             <div className='nav-item btn'>Login</div>
