@@ -1,0 +1,17 @@
+.playlist-grid{
+    margin: 1em;
+    padding: 1em;
+    background: var(--primary-200);
+    border-radius: var(--radius-m);
+}
+
+.playlist-title{
+    margin: 0.7em;
+}
+
+.playlist-head{
+    display: flex;
+}
+.playlist-options{
+    margin-left: auto;
+}
