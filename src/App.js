@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Nav from "./routes/Navigation/Nav";
-import HomePage from "./routes/Home/HomePage";
+import Nav from "./routes/Nav";
+import HomePage from "./routes/HomePage";
 import Mockman from "mockman-js";
 
 import "./styles/style.css";
-import VideoListing from "./components/Grids/VideoListing";
+import VideoListing from "./routes/VideoListing";
 
 function App() {
   return (
