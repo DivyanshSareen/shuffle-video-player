@@ -34,3 +34,28 @@
 .playlist-item:hover{
     opacity: 50%;
 }
+
+form{padding:1em 5em 1em 5em}
+
+.form-options{
+    display: flex;
+    margin: 0.7em 1em 0.5em 1em;
+}
+
+.form-options > .btn{
+    color: var(--primary);
+    background: var(--white);
+}
+
+.form-options>.btn:hover {
+    color: var(--white);
+    background: var(--primary-100);
+}
+
+.save-playlist{
+    margin-left: auto;
+}
+
+.input:focus-within label{
+    color: var(--white)
+}
