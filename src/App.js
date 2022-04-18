@@ -1,11 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Nav from "./routes/Nav";
 import HomePage from "./routes/HomePage";
+import VideoListing from "./routes/VideoListing";
+import PlaylistManage from "./routes/PlaylistManage";
 import Mockman from "mockman-js";
 
 import "./styles/style.css";
-import VideoListing from "./routes/VideoListing";
-import PlaylistManage from "./routes/PlaylistManage";
+import LoginPage from "./routes/LoginPage";
+import SignupPage from "./routes/SignupPage";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/listing' element={<VideoListing />} />
         <Route path='/playlist' element={<PlaylistManage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/signup' element={<SignupPage />} />
         <Route path='mock' element={<Mockman />} />
       </Routes>
     </div>
