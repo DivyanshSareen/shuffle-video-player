@@ -1,4 +1,4 @@
-import PlaylistGrid from "../components/Grids/PlaylistGrd";
+import PlaylistGrid from "../components/Grids/PlaylistGrid";
 import "../styles/playlist.css";
 
 const PlaylistManage = () => {

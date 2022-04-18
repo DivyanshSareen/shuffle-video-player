@@ -14,7 +14,7 @@ const VideoCard = ({ video }) => {
           style={{
             opacity: mouseOnCard === true ? "50%" : "100%",
           }}></img>
-        {mouseOnCard && <i class='fa-solid fa-play hover-icon'></i>}
+        {mouseOnCard && <i className='fa-solid fa-play hover-icon'></i>}
       </div>
       <div className='card-content'>
         <div className='card-head'>
@@ -22,8 +22,8 @@ const VideoCard = ({ video }) => {
           <div className='card-subtitle sub-title2'>{video.creator}</div>
         </div>
         <div className='card-actions'>
-          <i class='action-icon fa-regular fa-clock fa-lg'></i>
-          <i class='action-icon fa-solid fa-thumbs-up fa-lg'></i>
+          <i className='action-icon fa-regular fa-clock fa-lg'></i>
+          <i className='action-icon fa-solid fa-thumbs-up fa-lg'></i>
         </div>
       </div>
     </div>

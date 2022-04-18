@@ -5,13 +5,32 @@
     border-radius: var(--radius-m);
 }
 
+.new-playlist{
+    width: fit-content;
+}
+
 .playlist-title{
     margin: 0.7em;
 }
 
 .playlist-head{
     display: flex;
+    align-items: baseline;
 }
+
 .playlist-options{
     margin-left: auto;
+}
+
+.playlist-card{
+    margin-top:1em;
+}
+
+.playlist-item{
+    margin: 3px;
+    justify-content: center;
+}
+
+.playlist-item:hover{
+    opacity: 50%;
 }

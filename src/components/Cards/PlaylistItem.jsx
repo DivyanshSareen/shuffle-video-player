@@ -1,6 +1,6 @@
 const PlaylistItem = ({ video }) => {
   return (
-    <div className='card'>
+    <div className='card playlist-item'>
       <div className='card-content'>
         <div className='card-head'>
           <div className='card-title h4'>{video.title}</div>
