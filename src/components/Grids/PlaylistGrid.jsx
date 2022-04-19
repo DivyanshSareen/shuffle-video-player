@@ -19,7 +19,7 @@ const PlaylistGrid = () => {
           <i className='fa-solid fa-plus'></i>Add new Playlist
         </div>
       )}
-      {playlistState.playlists.map((playlist) => (
+      {playlistState?.playlists?.map((playlist) => (
         <PlaylistCard
           key={playlistState?.playlists?.indexOf(playlist)}
           playlist={playlist}
