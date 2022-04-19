@@ -1,5 +1,4 @@
 const PlaylistFormCard = ({ video }) => {
-  console.log(video);
   return (
     <div className='card playlist-item'>
       <div className='card-content'>

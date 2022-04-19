@@ -23,7 +23,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
-    padding: 2em
+    padding: 2em;
+    justify-items: center;
 }
 
 .list-title{

@@ -2,11 +2,7 @@ import PlaylistGrid from "../components/Grids/PlaylistGrid";
 import "../styles/playlist.css";
 
 const PlaylistManage = () => {
-  return (
-    <div>
-      <PlaylistGrid />
-    </div>
-  );
+  return <PlaylistGrid />;
 };
 
 export default PlaylistManage;

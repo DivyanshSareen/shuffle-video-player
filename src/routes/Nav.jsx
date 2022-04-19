@@ -12,19 +12,17 @@ const Nav = () => {
           </Link>
         </div>
         <div className='nav-list'>
-          <Link to='/'>
-            <div className='nav-item'>Home</div>
+          <Link className='nav-item' to='/'>
+            Home
           </Link>
-          <Link to='/listing'>
-            <div className='nav-item' onClick={() => getVideos()}>
-              Explore
-            </div>
+          <Link className='nav-item' onClick={() => getVideos()} to='/listing'>
+            Explore
           </Link>
-          <Link to='/playlist'>
-            <div className='nav-item'>Playlist</div>
+          <Link className='nav-item' to='/playlist'>
+            Playlist
           </Link>
-          <Link to='/login'>
-            <div className='nav-item btn'>Login</div>
+          <Link className='nav-item btn' to='/login'>
+            Login
           </Link>
         </div>
       </div>

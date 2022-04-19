@@ -1,5 +1,4 @@
-import PlaylistCard from "../Cards/PlaylistCard";
-import PlaylistForm from "../Forms/PlaylistForm";
+import { PlaylistForm, PlaylistCard } from "./index";
 import { usePlaylist } from "../../context/playlist-context";
 
 const PlaylistGrid = () => {
@@ -22,7 +21,7 @@ const PlaylistGrid = () => {
       )}
       {playlistState.playlists.map((playlist) => (
         <PlaylistCard
-          key={playlistState.playlists.indexOf(playlist)}
+          key={playlistState?.playlists?.indexOf(playlist)}
           playlist={playlist}
         />
       ))}
