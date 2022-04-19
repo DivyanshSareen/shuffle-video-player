@@ -8,6 +8,7 @@ import Mockman from "mockman-js";
 import "./styles/style.css";
 import LoginPage from "./routes/LoginPage";
 import SignupPage from "./routes/SignupPage";
+import RequiresAuth from "./RequiresAuth";
 
 function App() {
   return (
@@ -16,7 +17,14 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/listing' element={<VideoListing />} />
-        <Route path='/playlist' element={<PlaylistManage />} />
+        <Route
+          path='/playlist'
+          element={
+            <RequiresAuth>
+              <PlaylistManage />
+            </RequiresAuth>
+          }
+        />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignupPage />} />
         <Route path='mock' element={<Mockman />} />
