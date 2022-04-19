@@ -1,31 +1,49 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 
 const LoginForm = () => {
+  const { authState, authDispatch } = useAuth();
+  const { email, password, remember_me } = authState.loginForm;
   return (
     <form>
       <h5 className='h5 center-text login-head'>Login</h5>
       <div className='input'>
-        <label htmlFor='userEmail' className='input-label'>
+        <label htmlFor='email' className='input-label'>
           Email address
         </label>
         <input
-          name='userEmail'
+          name='email'
           type='email'
           className='input-data'
           placeholder='example@gmail.com'
-          d
+          value={email}
+          onChange={(e) =>
+            authDispatch({
+              type: "UPDATE_LOGIN_FORM_FIELD",
+              field: e.target.name,
+              payload: e.target.value,
+            })
+          }
           required></input>
       </div>
       <div className='input'>
-        <label htmlFor='userPassword' className='input-label'>
+        <label htmlFor='password' className='input-label'>
           Password
         </label>
         <input
-          name='userPassword'
+          name='password'
           type='password'
           id='password'
           className='input-data'
           placeholder='********'
+          value={password}
+          onChange={(e) =>
+            authDispatch({
+              type: "UPDATE_LOGIN_FORM_FIELD",
+              field: e.target.name,
+              payload: e.target.value,
+            })
+          }
           required></input>
       </div>
       <div className='options'>
@@ -34,7 +52,15 @@ const LoginForm = () => {
             name='remember_me'
             type='checkbox'
             className='input-data'
-            id='remember'></input>
+            id='remember'
+            value={remember_me}
+            onChange={(e) => {
+              authDispatch({
+                type: "TOGGLE_LOGIN_INPUT_ELEMENT",
+                field: e.target.name,
+                payload: e.target.value,
+              });
+            }}></input>
           <label htmlFor='remember_me'>Remember me</label>
         </div>
         <div className='paragraph2 forgot-password'>Forgot your Password?</div>
