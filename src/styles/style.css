@@ -43,7 +43,7 @@ body{
     background-color: var(--primary-100);
     color: var(--white);
     cursor: pointer;
-    max-width: 720px;
+    max-width: 45rem;
 }
 
 .card-img{
