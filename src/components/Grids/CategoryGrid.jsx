@@ -1,4 +1,4 @@
-import CategoryCard from "../Cards/CategoryCard";
+import { CategoryCard } from "./index";
 import { useCategory } from "../../context/category-context";
 
 const CategoryGrid = () => {
@@ -6,7 +6,7 @@ const CategoryGrid = () => {
 
   return (
     <>
-      {categories.map((cat) => (
+      {categories?.map((cat) => (
         <CategoryCard
           key={cat._id}
           category={cat}

@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 export const videos = [
   {
     _id: uuid(),
-    title: "Fireflies (Official Music Video)",
+    title: "Fireflies",
     image: "videos/fireflies.webp",
     category: "English",
     creator: "Owl City",
@@ -21,7 +21,7 @@ YouTube view counts pre-VEVO: 22,880,713. (C) 2009 Universal Republic Records, a
   },
   {
     _id: uuid(),
-    title: "Bones (Official Lyric Video)",
+    title: "Bones",
     category: "English",
     creator: "Imagine Dragons",
     image: "videos/bones.webp",
@@ -37,7 +37,7 @@ Music video by Imagine Dragons performing Bones (Lyric Video). © 2022 KIDinaKOR
   },
   {
     _id: uuid(),
-    title: "Happy (Video)",
+    title: "Happy",
     image: "videos/happy.webp",
     category: "English",
     creator: "Pharrell Williams",
@@ -49,7 +49,7 @@ Music video by Imagine Dragons performing Bones (Lyric Video). © 2022 KIDinaKOR
   },
   {
     _id: uuid(),
-    title: "VIBE (Official Video)",
+    title: "VIBE",
     category: "Punjabi",
     creator: "Diljit Dosanjh",
     image: "videos/vibe.webp",
@@ -76,7 +76,7 @@ Spl Thx - Diljit Thind ( THIND MOTION FILMS ) Chani Nattan, Maan Farms
   },
   {
     _id: uuid(),
-    title: "Fly high!! (spring Version)",
+    title: "Fly high",
     category: "Japanese",
     creator: "Burnout Syndromez",
     image: "videos/fly-high.webp",

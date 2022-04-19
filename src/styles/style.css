@@ -2,8 +2,9 @@
    
 :root{
     --primary: #1F1D2B;
+    --primary-200: #252836;
     --primary-100: #2F3142;
-
+    --primary-opacity-50: #2A2C3C;
     --white: #fff;
 }
 
@@ -34,12 +35,14 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
+    justify-items: center;
 }
 
 .card{
     background-color: var(--primary-100);
     color: var(--white);
     cursor: pointer;
+    max-width: 45rem;
 }
 
 .card-img{
@@ -66,3 +69,4 @@ body{
     height: 0;
 }
 
+.category-title{margin-left: 1em;}

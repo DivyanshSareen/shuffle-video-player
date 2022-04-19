@@ -23,7 +23,6 @@ const VideoProvider = ({ children }) => {
     } catch (e) {
       console.log(e);
     } finally {
-      console.log(response);
       videoDispatch({
         type: "LIST_VIDEOS",
         payload: response.data.videos.filter(

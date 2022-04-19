@@ -1,0 +1,70 @@
+.card{max-width: 100%;}
+
+.playlist-grid{
+    margin: 1em;
+    padding: 1em;
+    background: var(--primary-200);
+    border-radius: var(--radius-m);
+}
+
+.new-playlist{
+    width: fit-content;
+}
+
+.playlist-title{
+    margin: 0.7em;
+}
+
+.playlist-head{
+    display: flex;
+    align-items: baseline;
+    width: auto;
+}
+
+.playlist-options{
+    margin-left: auto;
+}
+
+.playlist-card{
+    margin-top:1em;
+}
+
+
+.playlist-item{
+    margin: 3px;
+}
+
+.card-content {
+    width: auto;
+}
+
+.playlist-item:hover{
+    background: var(--primary-opacity-50);
+}
+
+form{
+    padding:1em 5em 1em 5em
+}
+
+.form-options{
+    display: flex;
+    margin: 0.7em 1em 0.5em 1em;
+}
+
+.form-options > .btn{
+    color: var(--primary);
+    background: var(--white);
+}
+
+.form-options>.btn:hover {
+    color: var(--white);
+    background: var(--primary-100);
+}
+
+.save-playlist{
+    margin-left: auto;
+}
+
+.input:focus-within label{
+    color: var(--white)
+}

@@ -5,6 +5,7 @@ import Mockman from "mockman-js";
 
 import "./styles/style.css";
 import VideoListing from "./routes/VideoListing";
+import PlaylistManage from "./routes/PlaylistManage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/listing' element={<VideoListing />} />
+        <Route path='/playlist' element={<PlaylistManage />} />
         <Route path='mock' element={<Mockman />} />
       </Routes>
     </div>
