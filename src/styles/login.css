@@ -1,0 +1,34 @@
+form{
+    margin: 4vw 25vw 0vw 25vw;
+}
+
+.login-head {
+    font-weight: var(--bold);
+    padding: 0em 1em 1em 1em;
+}
+
+.remember-check {
+    display: inline;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.forgot-password {
+    opacity: 75%;
+}
+
+.btn-login {
+    margin: 1em;
+}
+
+.terms {
+    display: inline;
+}
+
+.input:focus-within label{
+    color: var(--white);
+}
