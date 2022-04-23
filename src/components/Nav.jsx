@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useVideo } from "../context/video-context";
+import { useAuth } from "../context/auth-context";
 
 const Nav = () => {
   const { getVideos } = useVideo();
+  const { authState, authDispatch } = useAuth();
   return (
     <nav>
       <div className='nav-wrapper'>
@@ -21,9 +23,18 @@ const Nav = () => {
           <Link className='nav-item' to='/playlist'>
             Playlist
           </Link>
-          <Link className='nav-item btn' to='/login'>
-            Login
-          </Link>
+          {authState.isLoggedIn ? (
+            <Link
+              to='/'
+              className='nav-item btn'
+              onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
+              Logout
+            </Link>
+          ) : (
+            <Link className='nav-item btn' to='/login'>
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>
