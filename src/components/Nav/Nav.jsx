@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useVideo } from "../context/video-context";
-import { useAuth } from "../context/auth-context";
+import { useVideo } from "../../context/video-context";
+import { useAuth } from "../../context/auth-context";
 
 const Nav = () => {
   const { getVideos } = useVideo();
