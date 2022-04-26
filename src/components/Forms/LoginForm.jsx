@@ -38,7 +38,11 @@ const LoginForm = () => {
     } finally {
       if (response.status === 200) {
         setLoading("finished");
-        authDispatch({ type: "LOGIN_USER", payload: response.data });
+        authDispatch({
+          type: "LOGIN_USER",
+          payload: response.data,
+          remember_me: loginForm.remember_me,
+        });
         navigate(from, { replace: true });
       } else setLoading("error");
     }

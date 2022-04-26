@@ -5,13 +5,13 @@ import { AuthProvider } from "./auth-context";
 
 const Provider = ({ children }) => {
   return (
-    <CategoryProvider>
-      <VideoProvider>
-        <AuthProvider>
+    <AuthProvider>
+      <CategoryProvider>
+        <VideoProvider>
           <PlaylistProvider>{children}</PlaylistProvider>
-        </AuthProvider>
-      </VideoProvider>
-    </CategoryProvider>
+        </VideoProvider>
+      </CategoryProvider>
+    </AuthProvider>
   );
 };
 
