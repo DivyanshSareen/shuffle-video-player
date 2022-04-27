@@ -48,10 +48,10 @@ const PlaylistForm = () => {
           required></input>
         <div className='form-options'>
           <button className='btn add-video'>
-            <i class='fa-solid fa-plus'></i> Add to Playlist
+            <i className='fa-solid fa-plus'></i> Add to Playlist
           </button>
           <button className='btn save-playlist'>
-            <i class='fa-solid fa-floppy-disk'></i> Save Playlist
+            <i className='fa-solid fa-floppy-disk'></i> Save Playlist
           </button>
         </div>
       </div>

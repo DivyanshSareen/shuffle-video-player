@@ -1,34 +1,23 @@
 const authReducer = (state, action) => {
   switch (action.type) {
-    case "UPDATE_LOGIN_FORM_FIELD":
+    case "ADD_EXISTING_AUTH_TOKEN":
       return {
         ...state,
-        loginForm: { ...state.loginForm, [action.field]: action.payload },
+        isLoggedIn: true,
+        authToken: action.payload,
       };
-    case "TOGGLE_LOGIN_INPUT_ELEMENT":
+    case "LOGIN_USER":
+      if (action.remember_me) {
+        window.localStorage.setItem("authToken", action.payload.encodedToken);
+      }
       return {
         ...state,
-        loginForm: {
-          ...state.loginForm,
-          [action.field]: action.payload === "true" ? false : true,
-        },
+        isLoggedIn: true,
+        authToken: action.payload.encodedToken,
       };
-    case "UPDATE_SIGNUP_FORM_FIELD":
-      return {
-        ...state,
-        signupForm: {
-          ...state.signupForm,
-          [action.field]: action.payload,
-        },
-      };
-    case "TOGGLE_SIGNUP_INPUT_ELEMENT":
-      return {
-        ...state,
-        signupForm: {
-          ...state.signupForm,
-          [action.field]: action.payload === "true" ? false : true,
-        },
-      };
+    case "LOGOUT_USER":
+      window.localStorage.clear("authToken");
+      return { ...state, isLoggedIn: false, authToken: "" };
     default:
       return state;
   }

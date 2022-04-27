@@ -4,10 +4,11 @@ import authReducer from "../reducer/auth-reducer";
 const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const token = window.localStorage.getItem("authToken");
+
   const [authState, authDispatch] = useReducer(authReducer, {
-    isLoggedIn: false,
-    loginForm: { email: "", password: "", remember_me: false },
-    signupForm: { email: "", password: "", accept_t_and_c: false },
+    isLoggedIn: token === null ? false : true,
+    authToken: token !== null ? token : "",
   });
   return (
     <authContext.Provider value={{ authState, authDispatch }}>

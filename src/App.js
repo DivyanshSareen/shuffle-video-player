@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Nav from "./routes/Nav";
+import Nav from "./components/Nav/Nav";
 import HomePage from "./routes/HomePage";
 import VideoListing from "./routes/VideoListing";
 import PlaylistManage from "./routes/PlaylistManage";
