@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import HomePage from "./routes/HomePage";
 import VideoListing from "./routes/VideoListing";
+import LikesPage from "./routes/AccountPage";
 import PlaylistManage from "./routes/PlaylistManage";
 import Mockman from "mockman-js";
 
@@ -22,6 +23,14 @@ function App() {
           element={
             <RequiresAuth>
               <PlaylistManage />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path='/likes'
+          element={
+            <RequiresAuth>
+              <LikesPage />
             </RequiresAuth>
           }
         />

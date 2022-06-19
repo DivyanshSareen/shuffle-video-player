@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
+import { useUser } from "../../context/user-context";
 
 const VideoCard = ({ video }) => {
   const [mouseOnCard, setMouseOnCard] = useState(false);
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
+  const { authState } = useAuth();
+  const { likeVideo } = useUser();
   return (
     <div
       className='card'
@@ -27,10 +29,12 @@ const VideoCard = ({ video }) => {
         </div>
         <div className='card-actions'>
           <i
-            onClick={() => !isLoggedIn && navigate("/login")}
+            onClick={() => !authState.isLoggedIn && navigate("/login")}
             className='action-icon fa-regular fa-clock fa-lg'></i>
           <i
-            onClick={() => !isLoggedIn && navigate("/login")}
+            onClick={() =>
+              authState.isLoggedIn ? likeVideo(video) : navigate("/login")
+            }
             className='action-icon fa-solid fa-thumbs-up fa-lg'></i>
         </div>
       </div>

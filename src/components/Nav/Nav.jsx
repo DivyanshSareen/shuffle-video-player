@@ -24,12 +24,17 @@ const Nav = () => {
             Playlist
           </Link>
           {authState.isLoggedIn ? (
-            <Link
-              to='/'
-              className='nav-item btn'
-              onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
-              Logout
-            </Link>
+            <>
+              <Link className='nav-item' to='/likes'>
+                Liked Videos
+              </Link>
+              <Link
+                to='/'
+                className='nav-item btn'
+                onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
+                Logout
+              </Link>
+            </>
           ) : (
             <Link className='nav-item btn' to='/login'>
               Login
