@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import HomePage from "./routes/HomePage";
 import VideoListing from "./routes/VideoListing";
-import LikesPage from "./routes/AccountPage";
+import VideoPage from "./routes/VideoPage";
+import LikesPage from "./routes/LikesPage";
 import PlaylistManage from "./routes/PlaylistManage";
 import Mockman from "mockman-js";
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/listing' element={<VideoListing />} />
+        <Route path='/video/:videoId' element={<VideoPage />} />
         <Route
           path='/playlist'
           element={
