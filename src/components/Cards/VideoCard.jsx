@@ -1,25 +1,8 @@
-import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../../context/auth-context";
-import { useUser } from "../../context/user-context";
-import axios from "axios";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const VideoCard = ({ video }) => {
   const [mouseOnCard, setMouseOnCard] = useState(false);
-  const navigate = useNavigate();
-  const [likedVideos, setLikedVideos] = useState([]);
-  const { authState } = useAuth();
-  useEffect(() => {
-    axios
-      .get("/api/user/likes", {
-        headers: { authorization: authState.authToken },
-      })
-      .then((resp) => setLikedVideos(resp.data.likes));
-  }, []);
-  const { likeVideo, dislikeVideo } = useUser();
-  const isLikedVideo = likedVideos.some(
-    (likedVideo) => likedVideo._id === video._id
-  );
 
   return (
     <Link
@@ -40,20 +23,6 @@ const VideoCard = ({ video }) => {
         <div className='card-head'>
           <div className='card-title h4'>{video.title}</div>
           <div className='card-subtitle sub-title2'>{video.creator}</div>
-        </div>
-        <div className='card-actions'>
-          <i
-            onClick={() => !authState.isLoggedIn && navigate("/login")}
-            className='action-icon fa-regular fa-clock fa-lg'></i>
-          <i
-            onClick={() =>
-              authState.isLoggedIn
-                ? isLikedVideo
-                  ? dislikeVideo(video)
-                  : likeVideo(video)
-                : navigate("/login")
-            }
-            className='action-icon fa-solid fa-thumbs-up fa-lg'></i>
         </div>
       </div>
     </Link>

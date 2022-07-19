@@ -1,18 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useAuth } from "../context/auth-context";
 import VideoCard from "../components/Cards/VideoCard";
+import { useUser } from "../context/user-context";
 
 const LikesPage = () => {
-  const [likedVideos, setLikedVideos] = useState([]);
-  const { authState } = useAuth();
-  useEffect(() => {
-    axios
-      .get("/api/user/likes", {
-        headers: { authorization: authState.authToken },
-      })
-      .then((resp) => setLikedVideos(resp.data.likes));
-  }, []);
+  const { likedVideos } = useUser();
 
   return (
     <>

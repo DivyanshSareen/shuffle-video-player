@@ -13,8 +13,8 @@ const LoginForm = () => {
 
   const { authDispatch } = useAuth();
   const [loginForm, setLoginForm] = useState({
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "bancobanco@gmail.com",
+    password: "Banco123",
     remember_me: false,
   });
 

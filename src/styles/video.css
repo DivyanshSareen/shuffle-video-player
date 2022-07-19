@@ -1,0 +1,26 @@
+.video{
+    width: 100%;
+    display: grid;
+    grid-template: "1fr" "1fr";
+}
+
+.video-frame{
+    width: 75%;
+    aspect-ratio: 7/3;
+    justify-self: center;
+}
+
+.video-info{
+    justify-self: center;
+    display: flex;
+    width: 75%;
+    padding-top: 0.7em;
+}
+
+.video-actions{
+    margin-left: auto;
+}
+
+.action-icon{
+    padding: 1em
+}

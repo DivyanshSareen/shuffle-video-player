@@ -8,7 +8,7 @@ const CategoryGrid = () => {
     <>
       {categories?.map((cat) => (
         <CategoryCard
-          key={cat._id}
+          key={cat?._id}
           category={cat}
           mouseOnCard={mouseOnCard}
           setMouseOnCard={setMouseOnCard}

@@ -9,8 +9,8 @@ const SignupForm = () => {
   const [loading, setLoading] = useState("finished");
 
   const [signupForm, setSignupForm] = useState({
-    email: "bancobanco@gmail.com",
-    password: "bancobanco",
+    email: "newuser@gmail.com",
+    password: "hello",
   });
 
   const handleChange = (e) => {

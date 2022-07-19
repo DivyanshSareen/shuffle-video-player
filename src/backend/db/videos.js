@@ -3,12 +3,12 @@ import { v4 as uuid } from "uuid";
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
  * */
-
 export const videos = [
   {
     _id: uuid(),
     title: "Fireflies",
     image: "videos/fireflies.webp",
+    link: "https://www.youtube.com/embed/psuRGfAaju4",
     category: "English",
     creator: "Owl City",
     likes: 200,
@@ -22,6 +22,7 @@ YouTube view counts pre-VEVO: 22,880,713. (C) 2009 Universal Republic Records, a
   {
     _id: uuid(),
     title: "Bones",
+    link: "https://www.youtube.com/embed/DYed5whEf4g",
     category: "English",
     creator: "Imagine Dragons",
     image: "videos/bones.webp",
@@ -38,6 +39,7 @@ Music video by Imagine Dragons performing Bones (Lyric Video). © 2022 KIDinaKOR
   {
     _id: uuid(),
     title: "Happy",
+    link: "https://www.youtube.com/embed/ZbZSe6N_BXs",
     image: "videos/happy.webp",
     category: "English",
     creator: "Pharrell Williams",
@@ -50,6 +52,7 @@ Music video by Imagine Dragons performing Bones (Lyric Video). © 2022 KIDinaKOR
   {
     _id: uuid(),
     title: "VIBE",
+    link: "https://www.youtube.com/embed/fyBzPE6w6-k",
     category: "Punjabi",
     creator: "Diljit Dosanjh",
     image: "videos/vibe.webp",
@@ -67,6 +70,7 @@ Spl Thx - Diljit Thind ( THIND MOTION FILMS ) Chani Nattan, Maan Farms
   {
     _id: uuid(),
     title: "BOY",
+    link: "https://www.youtube.com/embed/n0QNaym0jDI",
     category: "Japanese",
     creator: "King Gnu",
     image: "videos/boy.webp",
@@ -77,6 +81,7 @@ Spl Thx - Diljit Thind ( THIND MOTION FILMS ) Chani Nattan, Maan Farms
   {
     _id: uuid(),
     title: "Fly high",
+    link: "https://www.youtube.com/embed/CTaW2NKu3Z8",
     category: "Japanese",
     creator: "Burnout Syndromez",
     image: "videos/fly-high.webp",
