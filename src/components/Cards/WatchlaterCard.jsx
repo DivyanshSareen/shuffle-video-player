@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useWatchLater } from "../../context/watchlater-context";
 
-const VideoCard = ({ video }) => {
-  const { watchlater, addToWatchlater } = useWatchLater();
+const HistoryCard = ({ video, removeFromWatchlater }) => {
   const [mouseOnCard, setMouseOnCard] = useState(false);
-
   return (
-    <div
-      className='card'
-      onMouseEnter={() => setMouseOnCard(true)}
-      onMouseLeave={() => setMouseOnCard(false)}>
-      <Link to={`/video/${video._id}`} className='card-img resp-img'>
+    <div className='card'>
+      <Link
+        to={`/video/${video._id}`}
+        onMouseEnter={() => setMouseOnCard(true)}
+        onMouseLeave={() => setMouseOnCard(false)}
+        className='card-img resp-img'>
         <img
           src={require(`../../assets/${video.image}`)}
           alt='thumbnail'
@@ -24,12 +22,12 @@ const VideoCard = ({ video }) => {
         <div className='card-head'>
           <div className='card-title h4'>{video.title}</div>
           <div className='card-subtitle sub-title2'>{video.creator}</div>
-        </div>{" "}
+        </div>
         <div className='card-actions'>
           <i
-            className='action-icon fa-solid fa-clock fa-lg'
+            className='action-icon fa-solid fa-trash fa-lg'
             onClick={() => {
-              addToWatchlater(video);
+              removeFromWatchlater(video);
             }}></i>
         </div>
       </div>
@@ -37,4 +35,4 @@ const VideoCard = ({ video }) => {
   );
 };
 
-export default VideoCard;
+export default HistoryCard;
