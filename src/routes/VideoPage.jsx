@@ -54,8 +54,7 @@ const VideoPage = () => {
               title='YouTube video player'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-              onClick={(e) => console.log(e)}></iframe>
+              allowFullScreen></iframe>
           </div>
           <div className='video-info'>
             <div className='video-head'>

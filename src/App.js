@@ -5,6 +5,7 @@ import VideoListing from "./routes/VideoListing";
 import VideoPage from "./routes/VideoPage";
 import LikesPage from "./routes/LikesPage";
 import PlaylistManage from "./routes/PlaylistManage";
+import HistoryPage from "./routes/HistoryPage";
 import Mockman from "mockman-js";
 
 import "./styles/style.css";
@@ -33,6 +34,14 @@ function App() {
           element={
             <RequiresAuth>
               <LikesPage />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path='/history'
+          element={
+            <RequiresAuth>
+              <HistoryPage />
             </RequiresAuth>
           }
         />
