@@ -3,6 +3,7 @@ import { VideoProvider } from "./video-context";
 import { PlaylistProvider } from "./playlist-context";
 import { AuthProvider } from "./auth-context";
 import { UserProvider } from "./user-context";
+import { HistoryProvider } from "./history-context";
 
 const Provider = ({ children }) => {
   return (
@@ -10,7 +11,9 @@ const Provider = ({ children }) => {
       <UserProvider>
         <CategoryProvider>
           <VideoProvider>
-            <PlaylistProvider>{children}</PlaylistProvider>
+            <HistoryProvider>
+              <PlaylistProvider>{children}</PlaylistProvider>
+            </HistoryProvider>
           </VideoProvider>
         </CategoryProvider>
       </UserProvider>

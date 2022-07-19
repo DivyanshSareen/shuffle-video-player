@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useUser } from "../context/user-context";
+import { useHistory } from "../context/history-context";
 import RequiresAuth from "../RequiresAuth";
 import Loading from "../components/Loading/Loading";
 
@@ -11,6 +12,7 @@ const VideoPage = () => {
   let params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const { likeVideo, dislikeVideo, likedVideos } = useUser();
+  const { addVideoToHistory } = useHistory();
   const [isLikedVideo, setIsLikedVideo] = useState(false);
   const getVideo = async (id) => {
     try {
@@ -33,6 +35,7 @@ const VideoPage = () => {
   useEffect(() => {
     if (isLoading === false) {
       checkIfLiked();
+      addVideoToHistory(video);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);

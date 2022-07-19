@@ -20,11 +20,15 @@ const Nav = () => {
           <Link className='nav-item' onClick={() => getVideos()} to='/listing'>
             Explore
           </Link>
-          <Link className='nav-item' to='/playlist'>
-            Playlist
-          </Link>
+
           {authState.isLoggedIn ? (
             <>
+              <Link className='nav-item' to='/playlist'>
+                Playlist
+              </Link>
+              <Link className='nav-item' to='/history'>
+                History
+              </Link>
               <Link className='nav-item' to='/likes'>
                 Liked Videos
               </Link>
