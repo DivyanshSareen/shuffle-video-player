@@ -5,13 +5,12 @@ import { useParams } from "react-router-dom";
 import { useUser } from "../context/user-context";
 import RequiresAuth from "../RequiresAuth";
 import Loading from "../components/Loading/Loading";
-import videoReducer from "../reducer/video-reducer";
 
 const VideoPage = () => {
   const [video, setVideo] = useState({ _id: null, image: "loading.gif" });
   let params = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const { likeVideo, dislikeVideo, likedVideos, getLikedVideos } = useUser();
+  const { likeVideo, dislikeVideo, likedVideos } = useUser();
   const [isLikedVideo, setIsLikedVideo] = useState(false);
   const getVideo = async (id) => {
     try {
@@ -21,18 +20,26 @@ const VideoPage = () => {
       setIsLoading(false);
     } catch (e) {
       console.log(e);
-    } finally {
-      console.log(video._id, likedVideos);
-      if (likedVideos.findIndex((vid) => vid._id === video._id) !== -1) {
-        setIsLikedVideo(true);
-      }
-      console.log(isLikedVideo);
     }
+  };
+  const checkIfLiked = () => {
+    if (likedVideos.findIndex((vid) => vid._id === video._id) !== -1) {
+      setIsLikedVideo(true);
+    } else setIsLikedVideo(false);
   };
   useEffect(() => {
     getVideo(params.videoId);
   }, [params.videoId]);
-
+  useEffect(() => {
+    if (isLoading === false) {
+      checkIfLiked();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
+  useEffect(() => {
+    checkIfLiked();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [likedVideos]);
   return (
     <>
       {isLoading ? (
@@ -61,7 +68,9 @@ const VideoPage = () => {
               </RequiresAuth>
               <RequiresAuth>
                 <i
-                  onClick={() => likeVideo(video)}
+                  onClick={() => {
+                    isLikedVideo ? dislikeVideo(video) : likeVideo(video);
+                  }}
                   className='action-icon fa-solid fa-thumbs-up fa-lg'
                   style={{ opacity: `${isLikedVideo ? "100%" : "50%"}` }}></i>
               </RequiresAuth>

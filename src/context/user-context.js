@@ -8,7 +8,7 @@ const UserProvider = ({ children }) => {
   const { authState } = useAuth();
   const [likedVideos, setLikedVideos] = useState([]);
 
-  const getLikedVideos = () => {
+  const getLikedVideos = async () => {
     return axios
       .get("/api/user/likes", {
         headers: { authorization: authState.authToken },
@@ -16,8 +16,8 @@ const UserProvider = ({ children }) => {
       .then((resp) => setLikedVideos(resp.data.likes));
   };
 
-  const likeVideo = (video) => {
-    axios
+  const likeVideo = async (video) => {
+    await axios
       .post(
         "/api/user/likes",
         { video: video },
@@ -26,23 +26,26 @@ const UserProvider = ({ children }) => {
         }
       )
       .then((res) => {
+        console.log("set liked vids to", res.data.likes);
         setLikedVideos(res.data.likes);
-        getLikedVideos();
       });
   };
 
   const dislikeVideo = (video) => {
-    return axios.delete(
-      `/api/user/likes/${video._id}`,
-      {},
-      {
+    return axios
+      .delete(`/api/user/likes/${video._id}`, {
         headers: { authorization: authState.authToken },
-      }
-    );
+      })
+      .catch((e) => console.log(e))
+      .then((res) => {
+        console.log("set disliked vids to", res.data.likes);
+        setLikedVideos(res.data.likes);
+      });
   };
 
   useEffect(() => {
     getLikedVideos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
