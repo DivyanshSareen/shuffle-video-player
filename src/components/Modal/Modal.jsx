@@ -1,3 +1,4 @@
+import "../../styles/modal.css";
 const Modal = ({ isHidden, setIsHidden, children }) => {
   return (
     <div
@@ -5,7 +6,7 @@ const Modal = ({ isHidden, setIsHidden, children }) => {
       style={isHidden ? { display: "none" } : { display: "flex" }}>
       <div className='modal-form'>{children}</div>
       <button
-        className='btn btn-ghost modal-close-btn'
+        className='btn modal-close-btn'
         onClick={() => {
           setIsHidden(true);
         }}>

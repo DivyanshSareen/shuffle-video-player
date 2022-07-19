@@ -10,6 +10,7 @@ import WatchLater from "./routes/WatchLater";
 import Mockman from "mockman-js";
 
 import "./styles/style.css";
+import "./styles/modal.css";
 import LoginPage from "./routes/LoginPage";
 import SignupPage from "./routes/SignupPage";
 import RequiresAuth from "./RequiresAuth";

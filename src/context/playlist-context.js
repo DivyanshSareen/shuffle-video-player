@@ -28,7 +28,7 @@ const PlaylistProvider = ({ children }) => {
       )
       .catch((e) => console.log(e))
       .then((res) => {
-        console.log(res.data.playlists);
+        console.log(playlist);
         setPlaylist(res.data.playlists);
       });
   };
@@ -45,10 +45,10 @@ const PlaylistProvider = ({ children }) => {
       });
   };
 
-  const updatePlaylist = async (video) => {
+  const updatePlaylist = async (playlistId, video) => {
     await axios
       .post(
-        "/api/user/playlists/" + playlist._id,
+        "/api/user/playlists/" + playlistId,
         { video: video },
         {
           headers: { authorization: authState.authToken },
@@ -56,20 +56,24 @@ const PlaylistProvider = ({ children }) => {
       )
       .catch((e) => console.log(e))
       .then((res) => {
-        console.log(res.data.playlists);
-        setPlaylist(res.data.playlists);
+        const newPlaylist = playlist.map((ele) =>
+          ele._id === res.data.playlist._id ? res.data.playlist : ele
+        );
+        setPlaylist(newPlaylist);
       });
   };
 
-  const removeVideoFromPlaylist = async (playlist, video) => {
+  const removeVideoFromPlaylist = async (playlistId, video) => {
     await axios
-      .delete("/api/user/playlists/" + playlist._id + "/" + video._id, {
+      .delete("/api/user/playlists/" + playlistId + "/" + video._id, {
         headers: { authorization: authState.authToken },
       })
       .catch((e) => console.log(e))
       .then((res) => {
-        console.log(res.data.playlists);
-        setPlaylist(res.data.playlists);
+        const newPlaylist = playlist.map((ele) =>
+          ele._id === res.data.playlist._id ? res.data.playlist : ele
+        );
+        setPlaylist(newPlaylist);
       });
   };
 

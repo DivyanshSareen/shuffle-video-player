@@ -5,10 +5,10 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(43, 43, 43, 0.9);
 }
 
-.modal-form {
+.modal-form { 
     background-color: var(--primary-lighter);
     border-radius: var(--radius-m);
     padding: 1em;

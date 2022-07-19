@@ -1,12 +1,12 @@
 import "../styles/playlist.css";
-import { usePlaylist } from "../context/playlist-context";
-import { PlaylistForm } from "../components/Grids";
+import PlaylistGrid from "../components/Grids/PlaylistGrid";
 
 const PlaylistManage = () => {
-  const { playlist } = usePlaylist();
-  console.log(playlist);
-  return <PlaylistForm />;
-  // return <PlaylistGrid playlist={playlist} />;
+  return (
+    <>
+      <PlaylistGrid />
+    </>
+  );
 };
 
 export default PlaylistManage;
