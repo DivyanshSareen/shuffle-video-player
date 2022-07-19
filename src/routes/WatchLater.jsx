@@ -1,4 +1,4 @@
-import VideoCard from "../components/Cards/VideoCard";
+import WatchlaterCard from "../components/Cards/WatchlaterCard";
 import { useWatchLater } from "../context/watchlater-context";
 
 const WatchLater = () => {
@@ -10,7 +10,7 @@ const WatchLater = () => {
         <div className='h3 list-title'>WatchLater</div>
         <div className='listing-grid'>
           {watchlater.map((vid) => (
-            <VideoCard
+            <WatchlaterCard
               key={vid._id}
               video={vid}
               removeFromWatchlater={removeFromWatchlater}

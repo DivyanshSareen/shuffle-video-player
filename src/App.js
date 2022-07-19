@@ -6,6 +6,7 @@ import VideoPage from "./routes/VideoPage";
 import LikesPage from "./routes/LikesPage";
 import PlaylistManage from "./routes/PlaylistManage";
 import HistoryPage from "./routes/HistoryPage";
+import WatchLater from "./routes/WatchLater";
 import Mockman from "mockman-js";
 
 import "./styles/style.css";
@@ -19,8 +20,22 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/listing' element={<VideoListing />} />
-        <Route path='/video/:videoId' element={<VideoPage />} />
+        <Route
+          path='/listing'
+          element={
+            <RequiresAuth>
+              <VideoListing />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path='/video/:videoId'
+          element={
+            <RequiresAuth>
+              <VideoPage />
+            </RequiresAuth>
+          }
+        />
         <Route
           path='/playlist'
           element={
@@ -42,6 +57,14 @@ function App() {
           element={
             <RequiresAuth>
               <HistoryPage />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path='/watchlater'
+          element={
+            <RequiresAuth>
+              <WatchLater />
             </RequiresAuth>
           }
         />

@@ -6,13 +6,16 @@ const watchLaterContext = createContext();
 const WatchLaterProvider = ({ children }) => {
   const { authState } = useAuth();
   const [watchlater, setWatchlater] = useState([]);
+
   const getWatchlaterList = async () => {
     await axios
       .get("/api/user/watchlater", {
-        headers: { authorizatoin: authState.authToken },
+        headers: { authorization: authState.authToken },
       })
       .catch((e) => console.log(e))
-      .then((res) => setWatchlater(res.data.watchlater));
+      .then((res) => {
+        setWatchlater(res.data.watchlater);
+      });
   };
 
   const addToWatchlater = async (video) => {
@@ -22,7 +25,7 @@ const WatchLaterProvider = ({ children }) => {
         { video: video },
         {
           headers: {
-            authorizatoin: authState.authToken,
+            authorization: authState.authToken,
           },
         }
       )
@@ -32,17 +35,20 @@ const WatchLaterProvider = ({ children }) => {
 
   const removeFromWatchlater = async (video) => {
     await axios
-      .post(`/api/user/watchlater${video._id}`, {
-        headers: { authorizatoin: authState.authToken },
+      .delete(`/api/user/watchlater/${video._id}`, {
+        headers: { authorization: authState.authToken },
       })
       .catch((e) => console.log(e))
       .then((res) => setWatchlater(res.data.watchlater));
   };
 
   useEffect(() => {
-    getWatchlaterList();
+    if (authState.isLoggedIn) {
+      console.log("now");
+      getWatchlaterList();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [authState.isLoggedIn]);
   return (
     <watchLaterContext.Provider
       value={{

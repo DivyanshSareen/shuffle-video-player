@@ -32,6 +32,9 @@ const Nav = () => {
               <Link className='nav-item' to='/likes'>
                 Liked Videos
               </Link>
+              <Link className='nav-item' to='/watchlater'>
+                Watch Later
+              </Link>
               <Link
                 to='/'
                 className='nav-item btn'
