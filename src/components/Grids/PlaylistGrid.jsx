@@ -1,29 +1,10 @@
-import { PlaylistForm, PlaylistCard } from "./index";
-import { usePlaylist } from "../../context/playlist-context";
+import { PlaylistCard } from "./index";
 
-const PlaylistGrid = () => {
-  const { playlistState, playlistDispatch } = usePlaylist();
+const PlaylistGrid = (playlist) => {
   return (
     <div className='playlist-grid'>
-      {playlistState.addPlaylist ? (
-        <PlaylistForm />
-      ) : (
-        <div
-          className='btn new-playlist'
-          onClick={() => {
-            playlistDispatch({
-              type: "TOGGLE",
-              payload: "addPlaylist",
-            });
-          }}>
-          <i className='fa-solid fa-plus'></i>Add new Playlist
-        </div>
-      )}
-      {playlistState?.playlists?.map((playlist) => (
-        <PlaylistCard
-          key={playlistState?.playlists?.indexOf(playlist)}
-          playlist={playlist}
-        />
+      {playlist?.map((list) => (
+        <PlaylistCard key={list._id} playlist={list} />
       ))}
     </div>
   );

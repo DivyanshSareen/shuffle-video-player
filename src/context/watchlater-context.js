@@ -44,7 +44,6 @@ const WatchLaterProvider = ({ children }) => {
 
   useEffect(() => {
     if (authState.isLoggedIn) {
-      console.log("now");
       getWatchlaterList();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
