@@ -1,0 +1,6 @@
+.history-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-right: 3em;
+}

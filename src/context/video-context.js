@@ -31,6 +31,7 @@ const VideoProvider = ({ children }) => {
       });
     }
   };
+
   useEffect(() => {
     getVideos();
   }, []);

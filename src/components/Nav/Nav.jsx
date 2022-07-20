@@ -20,16 +20,25 @@ const Nav = () => {
           <Link className='nav-item' onClick={() => getVideos()} to='/listing'>
             Explore
           </Link>
-          <Link className='nav-item' to='/playlist'>
-            Playlist
-          </Link>
+
           {authState.isLoggedIn ? (
-            <Link
-              to='/'
-              className='nav-item btn'
-              onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
-              Logout
-            </Link>
+            <>
+              <Link className='nav-item' to='/playlist'>
+                Playlist
+              </Link>
+              <Link className='nav-item' to='/history'>
+                History
+              </Link>
+              <Link className='nav-item' to='/likes'>
+                Liked Videos
+              </Link>
+              <Link
+                to='/'
+                className='nav-item btn'
+                onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
+                Logout
+              </Link>
+            </>
           ) : (
             <Link className='nav-item btn' to='/login'>
               Login

@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const VideoCard = ({ video }) => {
+const HistoryCard = ({ video, removeVideoFromHistory }) => {
   const [mouseOnCard, setMouseOnCard] = useState(false);
-
   return (
-    <Link
-      to={`/video/${video._id}`}
-      className='card'
-      onMouseEnter={() => setMouseOnCard(true)}
-      onMouseLeave={() => setMouseOnCard(false)}>
-      <div className='card-img resp-img'>
+    <div className='card'>
+      <Link
+        to={`/video/${video._id}`}
+        onMouseEnter={() => setMouseOnCard(true)}
+        onMouseLeave={() => setMouseOnCard(false)}
+        className='card-img resp-img'>
         <img
           src={require(`../../assets/${video.image}`)}
           alt='thumbnail'
@@ -18,15 +17,22 @@ const VideoCard = ({ video }) => {
             opacity: mouseOnCard === true ? "50%" : "100%",
           }}></img>
         {mouseOnCard && <i className='fa-solid fa-play hover-icon'></i>}
-      </div>
+      </Link>
       <div className='card-content'>
         <div className='card-head'>
           <div className='card-title h4'>{video.title}</div>
           <div className='card-subtitle sub-title2'>{video.creator}</div>
         </div>
+        <div className='card-actions'>
+          <i
+            className='action-icon fa-solid fa-trash fa-lg'
+            onClick={() => {
+              removeVideoFromHistory(video);
+            }}></i>
+        </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
-export default VideoCard;
+export default HistoryCard;

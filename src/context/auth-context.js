@@ -10,6 +10,7 @@ const AuthProvider = ({ children }) => {
     isLoggedIn: token === null ? false : true,
     authToken: token !== null ? token : "",
   });
+
   return (
     <authContext.Provider value={{ authState, authDispatch }}>
       {children}
