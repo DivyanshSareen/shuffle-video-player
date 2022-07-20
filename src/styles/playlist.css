@@ -21,6 +21,12 @@
 
 .playlist-options{
     margin-left: auto;
+    display: flex;
+    gap: 2.5em;
+}
+
+.playlist-options > div > i{
+    cursor: pointer;
 }
 
 .playlist-card{

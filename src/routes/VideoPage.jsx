@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useUser } from "../context/user-context";
 import { useHistory } from "../context/history-context";
+import { useWatchLater } from "../context/watchlater-context";
 import RequiresAuth from "../RequiresAuth";
 import Loading from "../components/Loading/Loading";
 
@@ -13,6 +14,8 @@ const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { likeVideo, dislikeVideo, likedVideos } = useUser();
   const { addVideoToHistory } = useHistory();
+  const { watchlater, addToWatchlater, removeFromWatchlater } = useWatchLater();
+  const [isInWatchlater, setIsInWatchlater] = useState(false);
   const [isLikedVideo, setIsLikedVideo] = useState(false);
   const getVideo = async (id) => {
     try {
@@ -29,12 +32,18 @@ const VideoPage = () => {
       setIsLikedVideo(true);
     } else setIsLikedVideo(false);
   };
+  const checkIfInWatchLater = () => {
+    if (watchlater.findIndex((vid) => vid._id === video._id) !== -1) {
+      return setIsInWatchlater(true);
+    } else return setIsInWatchlater(false);
+  };
   useEffect(() => {
     getVideo(params.videoId);
   }, [params.videoId]);
   useEffect(() => {
     if (isLoading === false) {
       checkIfLiked();
+      checkIfInWatchLater();
       addVideoToHistory(video);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,6 +52,10 @@ const VideoPage = () => {
     checkIfLiked();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [likedVideos]);
+  useEffect(() => {
+    checkIfInWatchLater();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [watchlater]);
   return (
     <>
       {isLoading ? (
@@ -66,7 +79,14 @@ const VideoPage = () => {
             </div>
             <div className='video-actions'>
               <RequiresAuth>
-                <i className='action-icon fa-regular fa-clock fa-lg'></i>
+                <i
+                  className='action-icon fa-regular fa-clock fa-lg'
+                  style={{ opacity: `${isInWatchlater ? "100%" : "50%"}` }}
+                  onClick={() => {
+                    isInWatchlater
+                      ? removeFromWatchlater(video)
+                      : addToWatchlater(video);
+                  }}></i>
               </RequiresAuth>
               <RequiresAuth>
                 <i
