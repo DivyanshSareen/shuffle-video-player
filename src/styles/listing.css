@@ -12,11 +12,7 @@
 }
 
 .action-icon {
-    opacity: 50%;
-}
-
-.action-icon:hover {
-    opacity: 100%;
+    cursor: pointer;
 }
 
 .listing-grid {
