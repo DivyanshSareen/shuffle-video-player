@@ -72,3 +72,7 @@ form{
 .input:focus-within label{
     color: var(--white)
 }
+
+.space{
+    width: fit-content
+}
