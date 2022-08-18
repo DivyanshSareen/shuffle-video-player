@@ -38,10 +38,6 @@
     margin: 3px;
 }
 
-.card-content {
-    width: auto;
-}
-
 .playlist-item:hover{
     background: var(--primary-opacity-50);
 }
@@ -73,6 +69,13 @@ form{
     color: var(--white)
 }
 
-.space{
-    width: fit-content
+.playlist-item{
+    display: flex;
+    flex-direction: column;
 }
+
+.playlist-item-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+

@@ -9,8 +9,7 @@ const PlaylistItem = ({ playlistId, video, removeVideoFromPlaylist }) => {
             <div className='card-title h4'>{video.title}</div>
             <div className='card-subtitle sub-title2'>{video.creator}</div>
           </div>
-        </Link>{" "}
-        <Link to={`/video/${video._id}`} className='space'></Link>
+        </Link>
         <div
           className='card-actions'
           onClick={() => removeVideoFromPlaylist(playlistId, video)}>
