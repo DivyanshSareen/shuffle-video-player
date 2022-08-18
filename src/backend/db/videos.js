@@ -227,7 +227,7 @@ Credit:-
     category: "Themes",
     creator: "GTA Series Videos",
     likes: 200,
-    description: `Grand Theft Auto: San Andreas Opening Intro \ Titles
+    description: `Grand Theft Auto: San Andreas Opening Intro | Titles
 Platform: PC
 Made by: Rockstar Games & Rockstar North
     `,
