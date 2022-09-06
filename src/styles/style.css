@@ -13,6 +13,11 @@ body{
     background-color: var(--primary);
 }
 
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .nav-wrapper{
     background-color: var(--primary);
     width: 100%;

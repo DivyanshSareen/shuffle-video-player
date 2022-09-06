@@ -1,4 +1,5 @@
 import VideoCard from "../components/Cards/VideoCard";
+import EmptyList from "../components/EmptyList/EmptyList";
 import { useUser } from "../context/user-context";
 import { useWatchLater } from "../context/watchlater-context";
 
@@ -14,16 +15,22 @@ const LikesPage = () => {
   return (
     <>
       <div className='videos'>
-        <div className='h3 list-title'>Liked Videos</div>
-        <div className='listing-grid'>
-          {likedVideos.map((vid) => (
-            <VideoCard
-              key={vid._id}
-              video={vid}
-              isInWatchlater={checkIfInWatchLater(vid)}
-            />
-          ))}
-        </div>
+        {likedVideos.length === 0 ? (
+          <EmptyList type={"liked"} />
+        ) : (
+          <>
+            <div className='h3 list-title'>Liked Videos</div>
+            <div className='listing-grid'>
+              {likedVideos.map((vid) => (
+                <VideoCard
+                  key={vid._id}
+                  video={vid}
+                  isInWatchlater={checkIfInWatchLater(vid)}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </>
   );
